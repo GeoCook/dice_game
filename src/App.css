@@ -1,0 +1,12 @@
+body{
+  display:flex;
+  justify-content: center;
+}
+
+img{
+  width:50%;
+}
+
+.text{
+  text-align: center;
+}
