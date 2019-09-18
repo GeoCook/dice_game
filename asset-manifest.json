@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/dice_game/static/css/main.d1e31d2d.chunk.css",
+    "main.js": "/dice_game/static/js/main.6b460f77.chunk.js",
+    "main.js.map": "/dice_game/static/js/main.6b460f77.chunk.js.map",
+    "runtime~main.js": "/dice_game/static/js/runtime~main.492dc205.js",
+    "runtime~main.js.map": "/dice_game/static/js/runtime~main.492dc205.js.map",
+    "static/js/2.1b11c675.chunk.js": "/dice_game/static/js/2.1b11c675.chunk.js",
+    "static/js/2.1b11c675.chunk.js.map": "/dice_game/static/js/2.1b11c675.chunk.js.map",
+    "index.html": "/dice_game/index.html",
+    "precache-manifest.dbe4924f7d747e16be039efdec00c6f6.js": "/dice_game/precache-manifest.dbe4924f7d747e16be039efdec00c6f6.js",
+    "service-worker.js": "/dice_game/service-worker.js",
+    "static/css/main.d1e31d2d.chunk.css.map": "/dice_game/static/css/main.d1e31d2d.chunk.css.map",
+    "static/media/button.png": "/dice_game/static/media/button.e5095c41.png",
+    "static/media/face000.png": "/dice_game/static/media/face000.cdbf4da4.png",
+    "static/media/face001.png": "/dice_game/static/media/face001.166be804.png",
+    "static/media/face002.png": "/dice_game/static/media/face002.090aec2d.png",
+    "static/media/face003.png": "/dice_game/static/media/face003.ef9d2659.png",
+    "static/media/face004.png": "/dice_game/static/media/face004.a063cb20.png",
+    "static/media/face005.png": "/dice_game/static/media/face005.7107b41a.png",
+    "static/media/face006.png": "/dice_game/static/media/face006.ccb29bfc.png"
+  }
+}
