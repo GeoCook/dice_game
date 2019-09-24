@@ -1,3 +1,4 @@
+//importing images for the dice faces and css styling
 import React from 'react';
 import face0 from'./face000.png';
 import face1 from'./face001.png';
@@ -9,19 +10,20 @@ import face6 from'./face006.png';
 import clickPlay from './button.png'
 import './App.css';
 
-
+//class app made with react
 class App extends React.Component {
+  //state contains display, score and message
   state={
     display: `${face0}`,
     count: 0,
     message: ""
 
   }
-
+  //resets game
     clear=()=>{
       this.setState({count:0, message:""});
     }
-
+    //|"rolling" which produces a random face/number and add it to the total score.
     roll=()=>{
       let randomFace=Math.floor(Math.random() * 6);
       let newCount;
@@ -67,14 +69,10 @@ class App extends React.Component {
         }
     }
     
-    testPrint=()=>{
-      console.log("this image has been clicked")
-    }
-
     render(){
       return (
 
-        //ternary if the message is set to "you won", then display just the message, else, display the game
+        //ternary if the message is not "", then display the message, else, display the game
         <div className="App">
           {this.state.message !== "" ? 
             <div className="gameOver">
@@ -94,11 +92,21 @@ class App extends React.Component {
             </div>
 
             :
+            //game is still active, onlclick, roll
             <React.Fragment>
               <img src={clickPlay} alt="default" onClick={()=>this.roll()} />
               <img src={this.state.display} alt="default"/>
               <h1 id="count" className="text">Score: {this.state.count}</h1>
               <h1 className="message" className="text">{this.state.message}</h1>
+              <div id="rules">
+                <ul>Rules:
+                  <li>Roll the dice to begin the game</li>
+                  <li>Each time time the dice is rolled, the score adds up</li>
+                  <li>If the score passes 20, you win</li>
+                  <li>If you roll a 1 at any time, you lose</li>
+                </ul>
+                
+              </div>
             </React.Fragment>
           }
         </div>
