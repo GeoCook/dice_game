@@ -25,12 +25,11 @@ class App extends React.Component {
     roll=()=>{
       let randomFace=Math.floor(Math.random() * 6);
       let newCount;
-        if(randomFace==0){
+        if(randomFace===0){
           newCount=this.state.count+1;
           this.setState({count:newCount, display:face1, message:"You lose!"})
-          this.clear();
         }
-        else if(randomFace==1) {
+        else if(randomFace===1) {
           newCount=this.state.count+2;
           this.setState({ count:newCount, display:face2 })
           // newCount >= 20 ? this.setState({message:"You won!"}) : null
@@ -38,28 +37,28 @@ class App extends React.Component {
             this.setState({message:"You won!"})
           }
         }
-        else if(randomFace==2){
+        else if(randomFace===2){
           newCount=this.state.count+3;
           this.setState({count:newCount, display:face3})
           if(newCount>=20){
             this.setState({message:"You won!"})
           }
         }
-        else if(randomFace==3){
+        else if(randomFace===3){
           newCount=this.state.count+4;
           this.setState({count:newCount, display:face4})
           if(newCount>=20){
             this.setState({message:"You won!"})
           }
         }
-        else if(randomFace==4){
+        else if(randomFace===4){
           newCount=this.state.count+5;
           this.setState({count:newCount, display:face5})
           if(newCount>=20){
             this.setState({message:"You won!"})
           }
         }
-        else if(randomFace==5){
+        else if(randomFace===5){
           newCount=this.state.count+6;
           this.setState({count:newCount, display:face6})
           if(newCount>=20){
@@ -77,14 +76,29 @@ class App extends React.Component {
 
         //ternary if the message is set to "you won", then display just the message, else, display the game
         <div className="App">
-          {this.state.message === "You won!" ? 
-              <h1 id="message" className="text">{this.state.message}</h1>
+          {this.state.message !== "" ? 
+            <div className="gameOver">
+              <h1 className="message" className="text">{this.state.message}</h1>
+              {this.state.message === "You lose!"?
+                <div className="gameOver">
+                  <h1 id="roll-1">You rolled a 1!</h1>
+                  <img src={this.state.display} alt="one"/>
+                </div>
+              :
+                <div className="gameOver">
+                  <h1>You got over 20!</h1>
+                </div>
+              }
+              <button id="clearBtn" onClick={()=>this.clear()}>RESTART</button>
+              <h1 id="count" className="text">Score: {this.state.count}</h1>
+            </div>
+
             :
             <React.Fragment>
               <img src={clickPlay} alt="default" onClick={()=>this.roll()} />
               <img src={this.state.display} alt="default"/>
               <h1 id="count" className="text">Score: {this.state.count}</h1>
-              <h1 id="message" className="text">{this.state.message}</h1>
+              <h1 className="message" className="text">{this.state.message}</h1>
             </React.Fragment>
           }
         </div>
